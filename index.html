@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Plugin CSS -->
+    <link href="css/plugin.css" rel="stylesheet" />
+    <!-- style CSS -->
+    <link href="css/style.css" rel="stylesheet" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Document Title -->
+    <title>Bliss Solitaire </title>
+
+
+    <style type="text/css">
+        /* #Gallery .single-project-item {
+            height :242px;
+        }*/
+        #map2 {
+            margin-top: 0px;
+            float: right;
+            top: -70px;
+            left: -29px;
+        }
+        /*#map2 {
+            margin-top: 0px;
+            float: right;
+            top: -162px;
+            left: -8px;
+        }*/
+
+        a.button.style1.modalButton:hover {
+            background-color: #FF9800;
+        }
+
+        #text2 h3 {
+            font-size: 23px;
+            padding-left: 16px;
+        }
+
+        .single-service {
+            /* height: 406px;*/
+            border-left: 2px solid rgba(255, 255, 255, 1);
+            border-top: 2px solid rgba(255, 255, 255, 1);
+            height: 465px;
+            
+        }
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            /*bottom: 40px;*/
+           /* bottom: 30px;*/
+            bottom: 34%;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+        .float-call {
+            display:none;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            bottom: 35%;
+            right: 25px;
+            background-color: #FF9800;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #9999998c;
+            z-index: 100;
+        }
+        .my-float {
+            margin-top: 16px;
+        }
+
+        section.modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 998;
+        }
+            /*section.modalWindow {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    z-index: 999 !important;
+    width: 600px;
+    min-height: 200px;
+    margin-left: -300px;
+    background: #FFF;
+    cursor: default;
+    bottom: 84px;
+}*/
+            section.modal.overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 997;
+                cursor: pointer;
+            }
+        /*section.modalWindow section.modalWrapper {
+    margin: 30px;
+    border: 1px solid #DADADA;
+    padding: 15px;
+    text-align: left;
+    line-height: 20px !important;
+  height: 300px;
+}*/
+        .closeBtn {
+            position: absolute;
+            right: 10px;
+            top: 6px;
+            cursor: pointer;
+        }
+
+
+        section.modalWindow section.modalWrapper {
+            margin: 14px;
+            /* margin: 25px;*/
+            border: 2px solid #ea7e08;
+            padding: 15px;
+            text-align: center;
+            line-height: 20px !important;
+            /*  height: 320px;*/
+            height: 445px;
+            border-radius: 5px;
+        }
+
+        .labelcls {
+            padding: 4px;
+            margin: 5px;
+            width: 96%;
+            box-shadow: 1px;
+            border: 2px solid #0000008a;
+            border-radius: 5px;
+        }
+
+        /*section.modalWindow {
+            display: none;
+            position: fixed;
+            top: 24%;
+            left: 56%;
+            z-index: 999 !important;
+            width: 376px;
+            min-height: 200px;
+            margin-left: -280px;
+            background: #FFF;
+            cursor: default;
+            //bottom: 109px;
+            bottom: 110px;
+            PADDING: 11px;
+            border-radius: 5px;
+        }*/
+
+        section.modalWindow {
+            display: none;
+            position: fixed;
+            top: 24%;
+            left: 56%;
+            z-index: 999 !important;
+            width: 376px;
+            height: 495px;
+            margin-left: -280px;
+            background: #FFF;
+            cursor: default;
+            PADDING: 7px;
+            PADDING: 10px;
+            border-radius: 5px;
+            bottom: 127px;
+        }
+
+        .btnsubmitcls {
+            margin-left: 73px;
+            padding: 16px 12px;
+            text-align: center;
+            margin-top: -4px;
+            width: 40%;
+            background: #000;
+            color: #fff;
+            font-size: 18px;
+            border-style: 5px;
+            border-radius: 5px;
+        }
+
+        #mapbliss {
+            width: 600px;
+            height: 791px;
+        }
+
+        @media only screen and (min-width:330px) and (max-width: 360px) {
+            section.modalWindow {
+                left: 85%;
+                /* min-height: 209px;*/
+                height: 448px;
+                bottom: 154px;
+                width: 289px;
+                top: 10%;
+                padding: 2px;
+            }
+
+                section.modalWindow section.modalWrapper {
+                    height: 414px;
+                }
+
+                    section.modalWindow section.modalWrapper h2 {
+                        font-size: 23px;
+                    }
+
+            #mapbliss {
+                width: 327px;
+                height: 366px;
+            }
+
+            .section-title-left h2:before {
+                width: 0px;
+            }
+
+            .btnsubmitcls {
+                margin-left: 50px;
+                padding: 13px 12px;
+                width: 47%;
+            }
+
+            h1.pl-text {
+                left: 30%;
+                font-size: 32px;
+            }
+            .float{
+                bottom: 32%;
+               
+            }
+            .float-call{
+                display:block;
+                bottom: 39.6%;
+                position: fixed;
+            }
+           #btn34{
+                display:none;
+           }
+        }
+        @media only screen and (min-width: 320px)and (max-width:540px) {
+            .single-service {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column;
+            }
+        }
+       
+        /*MAP */
+        @media only screen and (min-width: 320px)and (max-width:1280px) {
+
+            /*#map2 {
+                margin-top: 0px;
+                float: none;
+                top: 0px;
+                left: 0px;
+                margin-bottom: -40px;
+            }*/
+            #map2 {
+                margin-top: 43px;
+                float: none;
+                top: 0px;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            #Location .mar-top-30 {
+                margin-top: 17px !important;
+            }
+            
+        }
+
+        @media only screen and (min-width: 768px)and (max-width:1280px) {
+            #map2 {
+                margin-top: 43px;
+                float: none;
+                top: 0px;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            #Location .mar-top-30 {
+                margin-top: 17px !important;
+            }
+        }
+
+        @media only screen and (max-width: 320px) {
+            section.modalWindow {
+                left: 90%;
+                height: 448px;
+                bottom: 71px;
+                width: 291px;
+                top: 8%;
+                padding: 2px;
+            }
+
+                section.modalWindow section.modalWrapper {
+                    height: 420px;
+                }
+
+                    section.modalWindow section.modalWrapper h2 {
+                        font-size: 23px;
+                    }
+
+            .btnsubmitcls {
+                margin-left: 61px;
+                width: 43%;
+                padding: 8px 12px;
+            }
+
+            h1.pl-text {
+                left: 30%;
+                font-size: 28px;
+            }
+
+            #mapbliss {
+                width: 280px;
+                height: 366px;
+            }
+
+            .section-title-left h2:before {
+                width: 0px;
+            }
+            .float{
+                bottom: 32%;
+            }
+            .float-call{
+                display:block;
+                bottom: 39.6%;
+                position: fixed;;
+            }
+           #btn34{
+                display:none;
+           }
+        }
+
+        /*@media only screen and (max-width: 375px) {
+            section.modalWindow {
+                top: 21%;
+                left: 75%;*/
+        /*bottom: 52px;*/
+        /*width: 352px;
+                bottom: 46px;
+            }
+             h1.pl-text {
+                left: 30%;
+                font-size: 32px;
+            }
+        }*/
+
+
+
+
+
+        @media only screen and (min-width:400px)and (max-width: 411px) {
+            section.modalWindow {
+                left: 70%;
+                bottom: 61px;
+            }
+
+            #mapbliss {
+                width: 376px;
+                height: 366px;
+            }
+
+            .section-title-left h2:before {
+                width: 0px;
+            }
+
+            h1.pl-text {
+                left: 30%;
+                font-size: 32px;
+            }
+            .float{
+                bottom: 32%;
+            }
+            .float-call{
+                display:block;
+                bottom: 39.6%;
+                position: fixed;
+            }
+           #btn34{
+                display:none;
+           }
+        }
+
+
+        /* @media only screen and (max-width: 320px) {
+            #mapbliss {
+                width: 280px;
+                height: 366px;
+            }
+
+            .section-title-left h2:before {
+                width: 0px;
+            }
+        }*/
+        @media only screen and (min-width: 760px) and (max-width: 769px) {
+            .col-sm-6 {
+                width: 100%;
+            }
+
+            #mapbliss {
+                width: 100%;
+            }
+
+            h1.pl-text {
+                left: 34%;
+            }
+
+            .single-service {
+                padding: 23px;
+                height: 466px;
+            }
+
+            .button.style1 {
+                margin-top: 150px;
+            }
+            .float{
+                bottom: 32%;
+            }
+            .float-call{
+                display:block;
+                bottom: 39.6%;
+                position: fixed;
+            }
+           #btn34{
+                display:none;
+           }
+        }
+
+        @media only screen and (min-width: 992px) and (min-width: 1024px) {
+
+            .col-md-offset-1 {
+                margin-left: 8.333333%;
+            }
+
+            #mapbliss {
+                height: 56em;
+                width: 500px;
+            }
+
+            nav.navbar.bootsnav ul.nav > li > a {
+                padding: 0 11px;
+            }
+        }
+
+        @media only screen and (min-width: 760px) and (max-width: 1204px) {
+            .single-service {
+                height: 713px;
+            }
+            .float{
+                bottom: 28%;
+            }
+            .float-call{
+                display:block;
+                bottom: 33.7%;
+                position: fixed;
+            }
+           #btn34{
+                display:none;
+           }
+        }
+         @media only screen and (min-width: 1024px)and (max-width: 1050){
+             .float{
+                bottom: 36%;
+            }
+             .float-call{
+                display:block;
+                bottom: 32.6%;
+            }
+           #btn34{
+                display:none;
+           }
+         }
+        
+        /*@media only screen and (min-width:800px) and   (max-width: 980px){
+            .col-md-offset-1 {
+                margin-left: 8.333333%;
+            }
+
+            #mapbliss {
+                height: 56em;
+                width: 450px;
+            }
+        }*/
+
+        @media only screen and (max-width: 560px) and (min-width: 320px) {
+            #btn34 {
+                font-size: 30px !important;
+                padding: 0px;
+            }
+
+                #btn34 .my-float {
+                    margin-top: 0px !important;
+                }
+                .float{
+                    right: 17%;
+                    bottom: 17%;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 22px;
+            }
+                .float-call{
+                display: block;
+                bottom: 30.1%;
+                width: 51px;
+                height: 50px;
+                font-size: 22px;
+                right: 60px;
+            }
+           #btn34{
+                display:none;
+           }
+        }
+        /*one plus */
+        @media only screen and (min-width:412px)and (max-width: 893px) {
+            section.modalWindow {
+                left: 69%;
+            }
+
+            h1.pl-text {
+                left: 30%;
+                font-size: 40px;
+            }
+           
+        }
+        /* iphone */
+        @media only screen and (max-width: 376px) and (min-width: 375px) {
+            section.modalWindow {
+                left: 83%;
+                width: 291px;
+                top: 18%;
+            }
+             h1.pl-text {
+                left: 30%;
+                font-size: 30px;
+            }
+            .float{
+                bottom: 32%;
+                right: 24%;
+            }
+            .float-call{
+                display:block;
+                bottom: 39.6%;
+                position: fixed;
+                right: 24%;
+            }
+           #btn34{
+                display:none;
+           }
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <!--Preloader starts-->
+        <div class="preloader js-preloader">
+            <h1 class="pl-text" data-content="Bliss Solitaire"></h1>
+        </div>
+        <!--Preloader ends-->
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+
+            <!-- Start Menu Area -->
+            <nav class="menu-area-one navbar navbar-default navbar-fixed white no-background bootsnav">
+                <!-- Start Top Search -->
+                <div class="top-search">
+                    <div class="container">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="ti-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon close-search"><i class="ti-close"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Top Search -->
+                <div class="container">
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="search"><a href="#"><i class="ti-search"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="ti-align-left"></i>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="images/logo.png" class="logo" alt="Logo">
+                        </a>
+                    </div>
+                    <!-- End Header Navigation -->
+                    <!-- start main menu -->
+                    <div class="main-menu-one collapse navbar-collapse" id="navbar-menu" >
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#Overview">Overview </a></li>
+                            <li><a href="#Note">Architect Note </a></li>
+                            <li><a href="#Gallery">Gallery </a></li>
+                            
+                            <li><a href="#Amenties">Amenties </a></li>
+                            <li><a href="#Floor">Floor Plan </a></li>
+                            <li><a href="#Specifications">Specifications</a></li>
+                            <li><a href="#Location">Location </a></li>
+                            <li><a href="#contact">Contact</a></li>
+
+                        </ul>
+                    </div>
+                    <!-- End main menu -->
+                </div>
+            </nav>
+            <!-- End Menu Area -->
+            <!-- Slider Starts-->
+            <div class="hero-slider-wrapper owl-carousel owl-theme home-banner-area">
+                <div class="hero-full-area">
+                    <div class="img" style="background-image: url(images/bg/bg4.jpeg);"></div>
+                    <div class="overlay op-1"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="banner-content bottom-v">
+                                <h2 class="banner-title light">Let your  <span class="bold">aspirations</span> meet the right foundation with Bliss Solitaire.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-full-area">
+                    <div class="img" style="background-image: url(images/bg/bg2.jpg);"></div>
+                    <div class="overlay op-1"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="banner-content bottom-v">
+                                <h1 class="banner-title light">A touch of the modern, a tinge of green and a measure of balance.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-full-area">
+                    <div class="img" style="background-image: url(images/bg/bg3.jpg);"></div>
+                    <div class="overlay op-1"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="banner-content bottom-v">
+                                <h1 class="banner-title light"><span class="bold">Bliss Solitaire - </span>The Best of Both Worlds. </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider  ends-->
+
+            <a href="tel:092 2552 6511" class="float-call" target="_blank">
+                <i class="fa fa-phone my-float"></i>
+            </a>
+
+            <a href="https://wa.me/919225526511?text=Hii%20!!" class="float" target="_blank">
+                <i class="fa fa-whatsapp my-float"></i>
+            </a>
+
+            <!-- About Section starts-->
+            <section class="about_section" id="Overview">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 d-none">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="about-bg">
+                                        <img src="images/about/1.jpg" alt="image">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="about-bg mar-top-70">
+                                        <img src="images/about/2.jpg" alt="image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-md-offset-1 col-xs-12">
+                            <div class="about-text-area-one">
+                                <div class="section-title-left float-none mar-top-70">
+                                    <h2>Who We Are</h2>
+                                </div>
+                                <p class="about-subtitle" style="text-align: justify;">Topical homes designed to reclaim convenience. Taste the Bliss of an urbane lifestyle with our elegantly crafted residences. Bliss Solitaire is the ideal deal if you’re looking for an abode nestled in the hot-spot; yet far from the clamor of the city. The project houses handsome homes as well as commercial spaces. (Offices & Shops) . </p>
+                                <div class="row">
+                                    <div class="col-md-8 text-center mar-top-20">
+                                    <a class="button style1 modalButton" data-popup="popuptwo" style="line-height: 1.6;">Download Brochure</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                </section>
+                <a class="closeBtn">X </a>
+            </section>
+
+
+            <section class="modal overlay"></section>
+            <!-- About Section ends-->
+
+            <!-- Testimonial Section starts-->
+            <section class="content-wrapper" id="Note" style="background-image: url(images/testimonial/testimonial-bg.svg); background-repeat: repeat;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title-left float-none mar-top-10">
+                                <h2><strong>Architect's Note</strong></h2>
+                             </div>
+                        </div>   
+                        <div class="col-md-12 text-center">
+                            <div class="section-title">
+                                <img src="images/testimonial/imran.jpg" style="max-width: 18%; border-radius: 50%; box-shadow: 3px 6px 10px #999;" />
+                            </div>
+                            <h1 style="margin-top: 30px; font-weight: 600;">Cubix Architect</h1>
+                        </div>
+                        <div class="row mar-top-30 pad-left-15 pad-right-15">
+                            <div class="col-md-10 col-md-offset-1 mar-top-15  text-center">
+                                <p style="text-align: center; font-weight: 300; font-size: 20px; line-height: 1.5;">"Home at <strong>Bliss Solitaire</strong> provides a sence of security, control, belonging, identity, and privacy, among other things. But most of all, it's a place that provides us with a centering—a place from which we leave each morning and to which we return each evening."</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-section" id="Gallery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title-left float-none mar-top-10">
+                                <h2><strong>Gallery</strong></h2>
+                            </div>
+                             <div class="row project-list">
+                            <div class="row project-gallery">
+                                <div class="col-md-4 col-sm-6 mar-bot-30 others">
+                                    <a href="images/gallery/2299_Bhumi undri A Wing_Image-03_02.jpg">
+                                        <div class="single-project-item">
+                                            <img alt="" class="img-responsive" src="images/gallery/2299_Bhumi undri A Wing_Image-03_02.jpg">
+                                            <div class="project-hover-item">
+
+                                                <h3>A Classic Blend of Commercial & Residential Space</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6 mar-bot-30 creative">
+                                    <a href="images/gallery/2299_Bhumi undri A Wing_Image-02.jpg">
+                                        <div class="single-project-item">
+                                            <img alt="" class="img-responsive" src="images/gallery/2299_Bhumi undri A Wing_Image-02.jpg">
+                                            <div class="project-hover-item">
+
+                                                <h3>Cherish the lush greens and have the City at hand; all at the same time</h3>
+
+
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6 mar-bot-30 project">
+                                    <a href="images/gallery/2299_Bhumi undri A Wing_Image-04_03.jpg">
+                                        <div class="single-project-item">
+                                            <img alt="" class="img-responsive" src="images/gallery/2299_Bhumi undri A Wing_Image-04_04.jpg">
+                                            <div class="project-hover-item">
+
+                                                  <h3>Embrace convenience the moment you step out</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6 mar-bot-30 creative">
+                                    <a href="images/gallery/2bhk_flat no. 205_04_PhysCamera001-2.png">
+
+                                        <div class="single-project-item" id="img-1">
+                                            <img alt="" class="img-responsive" src="images/gallery/2bhk_flat no. 205_04_PhysCamera001-2.png">
+                                            <div class="project-hover-item">
+                                                <h3>A 3D Cut View of a 2 BHK Flat at Bliss Solitaire. 
+                                            
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6 mar-bot-30 creative project">
+                                    <a href="images/gallery/2299_Bhumi undri A Wing_Image-01_02.jpg">
+
+                                        <div class="single-project-item">
+                                            <img alt="" class="img-responsive" src="images/gallery/2299_Bhumi undri A Wing_Image-01_02.jpg">
+                                            <div class="project-hover-item">
+                                                 <h3>Indulge in the Splendor of Venkatesh Bhoomi’s offering - Bliss Solitaire</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-details-section" id="Floor" style="background-image: url(images/testimonial/testimonial-bg.svg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="section-title-left float-none mar-top-10">
+                            <h2><strong>Floor Plan</strong></h2>
+                        </div>
+                        </div>
+                        <div class="col-md-7 col-sm-6 mar-bot-30" style="padding-top: 12px;">
+                            <a href="images/gallery/2bhk.png">
+                                <img src="images/gallery/2bhk_flat no. 205_04_PhysCamera001-2.png" alt="..."></a>
+                        </div>
+
+                        <div class="col-md-3 col-md-offset-1 col-sm-6  mar-bot-30">
+                            <div class="project-desc v1 style1">
+                                <ul class="footer-list">
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="text">
+                                                <p class="desc-title">Legend's</p>
+                                                <p>
+                                                    <img src="images/icon/A.png"></img>
+                                                    Entrance
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/B.png"></img>
+                                                    Living Room
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/C.png"></img>
+                                                    Dining
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/D.png"></img>
+                                                    Kitchen
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/E.png"></img>
+                                                    Dry Balcony
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/F.png"></img>
+                                                    Bedroom
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/G.png"></img>
+                                                    M. Bedroom
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/H.png"></img>
+                                                    Bath
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/I.png"></img>
+                                                    M. Bath
+                                                </p>
+
+                                                <p>
+                                                    <img src="images/icon/J.png"></img>
+                                                    Terrace
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="section-title-left float-none mar-top-10" id="text2" style="margin-bottom: 10px;">
+                        <h5>This is a pictorial representation of a 2 BHK flat at Bliss Solitaire. </h5>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+
+            <section class="service-section" style="background-image: url(images/about/amenities.jpg);" id="Amenties">
+                <div class="overlay op-7"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <div class="section-title-left">
+                                <h2 class="white-text mar-bot-50"><strong>Ammenities</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="service-list">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/landscape.png" alt="image">
+                                        </div>
+                                        <h2>Attractive Landscape</h2>
+                                        <p style="text-align:center;">Along with comfort & convenience, Bliss Solitaire also guarantees a visual treat</p>
+
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/kids.png" alt="image">
+                                        </div>
+                                        <h2>Kids Zone</h2>
+                                        <p style="text-align: center;">Never say never to those infant demands and shenanigans!  </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/fire.png" alt="image">
+                                        </div>
+                                        <h2>Fire Fighting System</h2>
+                                        <p style="text-align: center;">
+                                            Bliss Solitaire comes equipped with all necessary measures to keep harm at bay
+ 
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/rainwater.png" alt="image">
+                                        </div>
+                                        <h2>Rainwater Harvesting</h2>
+                                        <p style="text-align: center;">
+                                            We care deeply about preserving resources and promote conservation
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/lift.png" alt="image">
+                                        </div>
+                                        <h2>Dedicated Lift for Offices</h2>
+                                        <p style="text-align: center;">
+                                            Bliss Solitaire offers a dedicated elevator service for the commercial/official space
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/inverter.png" alt="image">
+                                        </div>
+                                        <h2>Provision for Inverter Backup</h2>
+                                        <p style="text-align: center;">
+                                            We’re best prepared for saving power in cases of emergency
+
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/toilet.png" alt="image">
+                                        </div>
+                                        <h2>Offices / Shops with Attached Toilet</h2>
+                                        <p style="text-align: center;">
+                                            No hassle of depending on a common washroom
+
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 single-service" style="height: 430px;">
+                                        <div class="service-icon">
+                                            <img class="icons mar-bot-15" src="images/icon/backup.png" alt="image">
+                                        </div>
+                                        <h2>Generator Back-up for Common Areas</h2>
+                                        <p style="text-align: center;">Say bye-bye to untimely power cuts and be rest assured</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <div class="row">
+                <div class="icon">
+                    <a class="button style1 modalButton float" id="btn34" data-popup="popuptwo" style="margin-bottom: 74px; background-color: #FF9800; margin: 0px 0px 68px 0px; padding: 0px;"><i class="fa fa-phone my-float" style="right: 10px;"></i></a>
+                </div>
+            </div>
+            
+            <section class="modal modalWindow" id="popuptwo">
+                <section class="modalWrapper">
+                    <b>
+                        <h1 style="text-align: center; color: #FF9800; font-weight: 700;">Enquiry</h1>
+                    </b>
+                    <form class="form-container" id="enquiryForm" action="enquirySubmit.php" method="POST">
+                        <input type="hidden" value="1" name="enquiry"> 
+                        <input type="text" id="name" placeholder="Name" name="name" required>
+                        <input type="text" placeholder="Phone" name="phone" required>
+    
+                        <input type="text" placeholder="Email" name="email" required>
+                        <input type="text" placeholder="City" name="city" required>
+                        <p>
+                        <button type="submit" id="submit-form" value="submit" class="btn" name="submit">Submit</button>
+                        </p>
+                        </form>
+                    <!--
+                    <p>
+                        <asp:Label ID="Label4" runat="server" Text="Email id" Style="font-size: 17px;"></asp:Label>
+                    </p>
+                    <p>
+                        <asp:TextBox ID="textEmail" class="labelcls" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="textEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" ForeColor="Red" ErrorMessage="*" Display="Dynamic" />
+
+                    </p>
+
+                    <p>
+                        <asp:Label ID="Label5" runat="server" Text="Name" Style="font-size: 17px;"></asp:Label>
+                    </p>
+                    <p>
+                        <asp:TextBox ID="textName" class="labelcls" runat="server"></asp:TextBox>
+                    </p>
+                    <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True" TargetControlID="textName" FilterType="LowercaseLetters, UppercaseLetters, Custom" ValidChars=" " />
+
+                    <p>
+                        <asp:Label ID="Label6" runat="server" Text="Phone Number" Style="font-size: 17px;"></asp:Label>
+                    </p>
+                    <p>
+                        <asp:TextBox ID="textPhone" class="labelcls" MaxLength="10" runat="server"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" Enabled="True" TargetControlID="textPhone" FilterType="Numbers" FilterMode="ValidChars" />
+
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="textPhone" ValidationExpression="[0-9]{10}" ForeColor="Red" ErrorMessage="*" />
+
+                    </p>
+
+                    <asp:Button ID="btnCallRequest" class="btnsubmitcls" runat="server" Text="Submit" OnClick="btnCallRequest_Click" />
+
+                -->
+
+                </section>
+                <a class="closeBtn">X </a>
+            </section>
+            <section class="modal overlay"></section>
+            <section class="project-detail-section" id="Specifications" style="background-image: url(images/bg/bg-5.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            <div class="section-title-left">
+                                <h2 class="dark-text mar-bot-50"><strong>Specifications</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="service-list">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/wall.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Walls </h3>
+                                        <p style="text-align: justify; margin-left: 13px;" class="mar-top-40">The best division of Space; made with :</p>
+                                        <p style="text-align: justify; margin-left: 15px;">
+                                            -  5” external walls </br>
+                                            -  4"/5” internal walls</br>
+                                            -  Gypsum on internal walls</br>
+                                            -  Fly Ash Bricks/ AAC Blocks
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/electrical.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Electricals</h3>
+                                        <p style="text-align: justify; margin-left: 13px;" class="mar-top-40">The Fittings We’ve Used to Fit Your Needs : </p>
+                                        <p style="text-align: justify; margin-left: 15px;">
+                                            - Concealed Copper Wiring</br>
+                                            - LeGrand/Anchor Modular Switches</br> 
+                                            - TV & Telephone points in Living and Master Bedrooms</br>
+                                            - Split AC Point in Master Bedroom
+
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/window.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Windows</h3>
+                                        <p style="text-align: justify; margin-left: 13px;" class="mar-top-40">Supreme quality and supreme protection : </p>
+                                        <p style="text-align: justify; margin-left: 15px;">
+                                            - Superior Quality Powder-coated aluminium windows with mosquito net</br>
+                                            - Granite Window Sill</br>
+                                            - Louvered Aluminium Windows in all Toilets and Bathrooms
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/door.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Doors</h3>
+                                        <p style="text-align: justify; margin-left: 13px;" class="mar-top-40">Enter With Grace :</p>
+                                        <p style="text-align: justify; margin-left: 15px;">
+                                            - Decorative Main Door with Brass Fittings </br>
+                                             - Two-sided laminated Flush Door</br>
+                                             - Granite Door Frames for Toilets
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/kitchen.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Kitchen</h3>
+                                        <p style="text-align: justify;margin-left: 13px;" class="mar-top-40">A Cookbook of Quality :</p>
+                                        <p style="text-align: justify; margin-left: 15px;">
+                                            - Granite Platform</br>
+                                             - Branded Stainless Steel Sink</br>
+                                             - Attractive Dado Tiles Up To 4' height over platform</br>
+                                             - Provision for Water Purifier and Exhaust Fan
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/toilet2.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Toilets and Bathrooms</h3>
+                                        <p style="text-align: justify; margin-left: 13px;" class="mar-top-40">
+                                            When Style and Comfort collaborate :
+                                        </p>
+                                        <p style="text-align: justify; margin-left: 15px;">
+                                            - Designer tiles up to Lintel levels </br>
+                                            - Western Commode in all Toilets</br>
+                                            - CP Fitting of Jaguar or equivalent make</br>
+                                            - Branded, good quality sanitaryware </br>
+                                            - Provision of Exhaust Fan & Geyser</br>
+                                            - Acrylic Sheets for Stashing the Roof</br>
+                                            - Solar Water Heater Connection for One Washroom
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/structure.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Structure</h3>
+                                        <p style="text-align: center" class="mar-top-40">
+                                            -Earthquake resistant RCC structure
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/Paint.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Paint</h3>
+                                        <p style="text-align: center;" class="mar-top-40">
+                                            - Internal walls with OBD paint
+                                        </p>
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/railings.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Railing</h3>
+                                        <p style="text-align: center;" class="mar-top-40">
+                                            - MS
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/balcony.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Dry Balcony</h3>
+                                        <p style="text-align: center;" class="mar-top-40">
+                                            - Provision for washing machine
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/elevators.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">KONE Elevator</h3>
+                                        <p style="text-align:center;" class="mar-top-40">
+                                            - Fully automatic KONE elevators with power backup
+                                        </p>
+                                
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 single-service-dark" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/safety.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Safety & Security</h3>
+                                        <p style="text-align: center;" class="mar-top-40">
+                                            - Video door phone
+                                        </p>
+
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 single-service-dark justify-content-center" style="height: 443px;">
+                                        <div class="service-icon" style="text-align: center;">
+                                            <img class="icons mar-bot-15" src="images/icon/flooring.png" alt="image">
+                                        </div>
+                                        <h3 style="text-align: center;">Flooring</h3>
+                                        <p style="text-align: center;" class="mar-top-40">
+                                            - Double charged tiles of reputed make<br>
+                                            - Anti-skid flooring tiles of reputed make in toilets & terrace.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <section class="project-section" id="Location">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 mar-bot-100" style="margin-bottom: 0px !important; margin-left: 7px;">
+                            <div class="single-portfolio-item item-left">
+
+                                <div class="col-md-12">
+                                    <div class="portfolio-img">
+                                        <img src="images/about/map.jpg" alt=">
+                                    </div>
+
+                                    <div class="mapbutton">
+                                        <a href="https://goo.gl/maps/GT2uUkm28GQRw4wu7" target="_blank" class="button style1" id="map2"><span style="vertical-align: text-top;">Visit Now</span><i class="fa fa-map-marker" aria-hidden="true" style="font-size: 20px; padding-left: 13px;"></i></a>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section ends-->
+            <!-- icons -->
+        </div>
+        <!-- Content Wrapper Ends -->
+        <!-- Footer wrapper start -->
+        <div class="footer-wrapper footer-dark" id="contact" style="background-color: #fff;">
+            <div class="overlay op-9"></div>
+            <div class="footer-area">
+                <div class="container">
+                    <div class="row nav-folderized">
+                        <div class="col-md-5 col-sm-6 ">
+                            <div class="footer-widget about">
+                                <img class="logo mar-bot-30" src="images/logo.png" alt="">
+                                <p style="text-align: justify;">Bliss Solitaire - Surrounded by necessity,<br>Developed with Devotion and Delivered with Care.</p>
+                                <ul class="social-buttons style4">
+                                    <li><a href="https://www.facebook.com/venkateshbhoomicons" target="_blank"><i class="ion-social-facebook-outline"></i></a></li>
+                                    <li><a href="https://www.instagram.com/venkateshbhoomiconstructions/" target="_blank"><i class="ion-social-instagram-outline"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCd9UVbKns_y9yTkbgS2RDdg" target="_blank"><i class="ion-social-youtube-outline"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget nav">
+                                <h3 class="dark-text mar-bot-50"><strong>Contacts</strong></h3>
+                                <ul class="footer-list">
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="ti-email"></i>
+                                            </div>
+                                            <div class="text">
+
+                                                <a href="mailto:sales@venkateshbhoomi.com">sales@venkateshbhoomi.com</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="ion-ios-telephone-outline"></i>
+                                            </div>
+                                            <div class="text">
+                                                <a href="tel:092 2552 6511">92 2552 6511</a></br>
+                                                <a href="tel:092 2552 6322">92 2552 6322
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget nav">
+                                <h3 class="dark-text mar-bot-50"><strong>Address</strong></h3>
+                                <ul class="footer-list">
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="ti-location-pin"></i>
+                                            </div>
+                                            <div class="text">Site office : Bliss, S. No. 5,Nr. Bishop School, Undri, Dist : Pune-411060</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="ti-location-pin"></i>
+                                            </div>
+                                            <div class="text">Corporate office : Venkatesh Bhoomi Constructions LLP,B105,next to Bishop School, Undri,Pune-411060</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="ti-location-rera"></i>
+                                            </div>
+                                            <div class="text">MAHA RERA No. P52100026322 </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright-area">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <p>&copy; Copyright 2020 Bliss Solitaire | All rights reserved</p>
+                            <p>Conceptualized, Designed and Developed by <a href="https://cognilements.com/" target="_blank" style="color: #fff;"><strong>Cognilements India</strong></a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Wrapper Ends -->
+        <!-- Scripts starts-->
+        <!-- Plugin js -->
+        <script src="js/plugin.js"></script>
+        <!-- Main js -->
+        <script src="js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+
+        <!-- Scripts Ends -->
+        <script>
+            settings = {
+                //Model Popup
+                objModalPopupBtn: ".modalButton",
+                objModalCloseBtn: ".overlay, .closeBtn",
+                objModalDataAttr: "data-popup"
+            }
+            $(settings.objModalPopupBtn).bind("click", function () {
+                if ($(this).attr(settings.objModalDataAttr)) {
+
+                    var strDataPopupName = $(this).attr(settings.objModalDataAttr);
+
+
+                    //Fade In Modal Pop Up
+                    $(".overlay, #" + strDataPopupName).fadeIn();
+
+                }
+            });
+
+            //On clicking the modal background
+            $(settings.objModalCloseBtn).bind("click", function () {
+                $(".modal").fadeOut();
+            });
+            
+
+        </script>
+
+    </form>
+</body>
+</html>
